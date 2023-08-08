@@ -20,7 +20,7 @@ html{
 body{
     /* background-color: white; */
     color: black;
-    /* font-size: 20px; */
+    font-size: 15px;
 }
 
 /* Header section */
@@ -41,7 +41,7 @@ body{
     align-items: center;
 }
 #header .logoContent .logo img{
-    height: 70px;
+    height: 65px;
 }
 
 #header .navbar a{
@@ -60,6 +60,10 @@ body{
 }
 #header .icon{
     display: none;
+}
+
+section{
+    padding: 30px 3%;
 }
 
 /* Home section */
@@ -82,6 +86,35 @@ body{
     margin-top: 50px;
     color: var(--brown);
     text-shadow: var(--box-shadow);
+}
+
+.heading{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 30px;
+    color: var(--brown);
+}
+
+/* Products section */
+
+.product-list {
+    display: grid;
+    /* Set the width of all column between 300px and 1fr */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+.product{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.product img{
+    width: 100%;
+    display: block;
+    transition: transform 0.5s;
+}
+.product img:hover{
+    transform: scale(1.065);
 }
 
 /* media queries for web responsive */
@@ -107,6 +140,9 @@ body{
 }
 
 @media only screen and (max-width: 700px){
+    #header .logoContent .logo img{
+        height: 50px;
+    }
     #header .icon{
         display: inline-block;
     }
@@ -135,5 +171,18 @@ body{
     }
     #home .homeContent h1{
         font-size: 40px;
+    }
+
+    .heading{
+        font-size: 20px;
+    }
+    section{
+        padding: 30px 4%;
+    }
+}
+
+@media only screen and (max-width: 350px){
+    .product-list{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 }
